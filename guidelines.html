@@ -1,0 +1,153 @@
+//guidelines    <!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* Your existing styles here... */
+
+        /* Pop-up styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-content {
+            background-color: #f4f4f4;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        .modal-button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .modal-button:hover {
+            background-color: #0056b3;
+        }
+
+        .button-container {
+            position: fixed;
+            bottom: 90px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .header-container {
+            position: relative;
+            text-align: center;
+            color: white;
+            font-size: 36px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5); /* Background color for the heading container */
+        }
+
+        body {
+            background-image: url('https://www.bing.com/th/id/OGC.2d134e605fafac523be5d27612f2e15e?pid=1.7&rurl=https%3a%2f%2fmedia.giphy.com%2fmedia%2fXsC8sdCZkCoG4%2fgiphy.gif&ehk=%2fpSkogRHe3SjcYRx1rzsf9lr5Oc5TChXtR4g1YoIG5A%3d');
+            background-size: cover; /* Adjust the sizing of the background image */
+            background-repeat: no-repeat; /* Prevent background image from repeating */
+        }
+    </style>
+</head>
+<body>
+
+<div class="header-container">
+    <h1>GUIDELINES</h1>
+</div>
+
+<!-- Your existing slideshow container... -->
+
+<div class="button-container">
+    <button class="modal-button" onclick="openModal('Ticket Booking')">Open Ticket Booking Info</button>
+    <button class="modal-button" onclick="openModal('Passenger Etiquette')">Open Passenger Etiquette Info</button>
+    <button class="modal-button" onclick="openModal('Refunds and Cancellations')">Open Refunds and Cancellations Info</button>
+    <button class="modal-button" onclick="openModal('Stay Informed')">Open Stay Informed Info</button>
+</div>
+
+<!-- The pop-up modal -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modal-title"></h2>
+        <ul id="modal-content"></ul>
+    </div>
+</div>
+
+<script>
+// Your existing JavaScript functions...
+
+function openModal(title) {
+    var modal = document.getElementById("myModal");
+    var modalTitle = document.getElementById("modal-title");
+    var modalContent = document.getElementById("modal-content");
+
+    if (title === "Ticket Booking") {
+        modalTitle.innerHTML = "Ticket Booking";
+        modalContent.innerHTML = `
+            <li>When booking tickets for a train journey, ensure you provide accurate information about the passengers and select the appropriate class and coach.</li>
+            <li>Be mindful of the departure and arrival times and arrive at the station well in advance to avoid missing your train.</li>
+            <li>Ticket booking can be done through various channels such as railway station counters, online booking websites/apps, or authorized travel agents.</li>
+        `;
+    } else if (title === "Passenger Etiquette") {
+        modalTitle.innerHTML = "Passenger Etiquette";
+        modalContent.innerHTML = `
+            <li>Be considerate of your fellow passengers. Keep noise levels to a minimum, especially during the night.</li>
+            <li>Maintain cleanliness and hygiene. Use the provided trash bins for waste disposal.</li>
+            <li>Respect the privacy of others and avoid leaning on or occupying someone else's berth or seat.</li>
+            <li>Follow instructions from railway staff and be courteous to co-passengers and railway employees.</li>
+        `;
+    } else if (title === "Refunds and Cancellations") {
+        modalTitle.innerHTML = "Refunds and Cancellations";
+        modalContent.innerHTML = `
+            <li>Understand the refund and cancellation policies of the railway company before making your booking. Policies may vary based on the type of ticket and time of cancellation.</li>
+            <li>Generally, full or partial refunds are possible if you cancel your ticket well in advance of the departure time. Late cancellations may result in little or no refund.</li>
+            <li>Some types of tickets, such as Tatkal or Premium Tatkal, might have more restrictive refund policies. Check the specific terms when booking these tickets.</li>
+        `;
+    } else if (title === "Stay Informed") {
+        modalTitle.innerHTML = "Stay Informed";
+        modalContent.innerHTML = `
+            <li>Keep yourself updated with the latest information regarding your train's status, platform, and any delays or changes. This can be done through station displays, mobile apps, or online railway portals.</li>
+            <li>Be aware of the safety measures and emergency procedures on the train. Pay attention to announcements and follow the instructions in case of an emergency.</li>
+            <li>Carry all necessary travel documents and identification for ticket verification and security checks.</li>
+        `;
+    }
+
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none"; // Add double quotes around "none"
+}
+</script>
+
+</body>
+</html>

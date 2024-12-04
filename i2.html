@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Train Station Search</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h2>Search Train Station</h2>
+
+<input type="text" id="stationInput" placeholder="Enter station name...">
+<div id="stationList"></div>
+
+<script>
+$(document).ready(function(){
+    $('#stationInput').keyup(function(){
+        var query = $(this).val();
+        
+        if(query.length > 1){
+            $.ajax({
+                url: 'fetch_stations.php',
+                method: 'POST',
+                data: {query:query},
+                success: function(data){
+                    $('#stationList').html(data);
+                }
+            });
+        } else {
+            $('#stationList').html('');
+        }
+    });
+    
+    $(document).on('click', 'li', function(){
+        $('#stationInput').val($(this).text());
+        $('#stationList').html('');
+    });
+});
+</script>
+
+</body>
+</html>

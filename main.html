@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USER MODULE</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #3498db; /* Blue background */
+            color: #fff; /* White text */
+            padding: 1rem;
+            position: relative;
+        }
+        .logo {
+            font-size: 1.5rem;
+        }
+        .logo img {
+            height: 60px;
+        }
+        .navbar_menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar_menu li {
+            position: relative;
+            text-decoration: none;
+            padding: 0.75rem 1rem;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .navbar_menu li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        .navbar_menu li:hover {
+            background-color: #fff; /* White background */
+            transform: scale(1.05);
+        }
+        
+        .navbar_menu li:hover a {
+            color:black; /* Blue text */
+        }
+        
+        .navbar_menu ul {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #3498db; /* Blue background */
+            width: 100%;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            z-index: 1;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .navbar_menu li:hover > ul {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .navbar_menu ul li {
+            padding: 0.5rem 0.75rem;
+            background-color: #3498db;
+            color:black;
+        }
+        
+        .navbar_menu ul li a {
+            color:black;
+            text-decoration: none;
+        }
+        
+        .navbar_menu ul li a:hover {
+           color: black;
+        }
+
+        .toggle {
+            display: none;
+        }
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .navbar_menu {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #3498db; /* Blue background */
+                flex-direction: column;
+                margin-top:7%;
+            }
+            .navbar.active .navbar_menu {
+                display: flex;
+            }
+            .menu-icon {
+                display: block;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                font-size: 1.5rem;
+            }
+            .logo img {
+                height: 70px;
+            }
+            
+            .navbar_menu li {
+                width: 100%;
+            }
+            .navbar_menu ul {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                background-color: transparent;
+                transition: none;
+                box-shadow: none;
+            }
+            .navbar_menu ul li {
+                background-color:#3498db;
+                display: none; 
+            }
+            .navbar_menu li:hover ul li {
+                background-color:#3498db;
+                display: block;
+            }
+            .navbar_menu ul li a {
+                color: #3498db;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const toggleButton = document.querySelector('.toggle');
+            const navbar = document.querySelector(".navbar");
+            const menuIcon = document.querySelector('.menu-icon');
+            const scrollButton = document.querySelector(".scroll-down");
+            
+            scrollButton.addEventListener("click", function() {
+                    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+            });
+
+            toggleButton.addEventListener('click', () => {
+                navbar.classList.toggle('active');
+            });
+            
+            menuIcon.addEventListener('click', () => {
+                navbar.classList.toggle('active');
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><img src="https://www.ltmetro.com/wp-content/uploads/2020/06/logo-1-1-1.png" alt="HYDERABAD METRO"></div>
+        <a href="#" class="toggle">
+            <span class="bar"></span>
+        </a>
+        <div class="menu-icon">&#9776;</div>
+        <ul class="navbar_menu">
+            <li><a href="#">Home</a></li>
+            <li>
+                <a href="#">About Us</a>
+                <ul>
+                    <li><a href="aboutus.html">About</a></li>
+                    <li><a href="gallerypage.html">Gallery</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Guide</a>
+                <ul>
+                    <li><a href="guide.jsp">GuideLines</a></li>
+                    <li><a href="safety.jsp">Safety</a></li>
+                </ul>
+            </li><li><a href="https://www.ltmetro.com/wp-content/uploads/2021/03/HMRRouteMap_new.pdf">Network Map</a></li>
+            <li>
+                <a href="#">Ticketing</a>
+                <ul>
+                    <li><a href="#">Plan your Trip</a></li>
+                    <li><a href="getdetails.jsp">Book Tickets</a></li>
+                    <li><a href="#">Metro Stations</a></li>
+                    <li><a href="https://www.ltmetro.com/wp-content/uploads/2023/03/Holiday-Calendar_2023-24.pdf">Offers & Discounts</a></li>
+                    </ul>
+            </li>
+            <li>
+                <a href="#">Customer Services</a>
+                <ul>
+                    <li><a href="contact.jsp">Contact Us</a></li>
+                    <li><a href="faqs.jsp">FAQs</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">My Account</a>
+                <ul>
+                    <li><a href="myprofile.jsp">My Profile</a></li>
+                    <li><a href="#">My Bookings</a></li>
+                    <li><a href="logout.jsp"  id="logout">LogOut</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>

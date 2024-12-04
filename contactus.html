@@ -1,0 +1,211 @@
+//contact us    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .image {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+        }
+
+        .scroll-down-bar {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        .scroll-down-bar span {
+            display: block;
+            width: 40px;
+            height: 40px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-size: 24px;
+            background-color: white;
+        }
+
+        /* Styling for the contact form container */
+        .contact-form-container {
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 60px;
+            background-color: pink;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 50px;
+            border: 1px solid #ccc;
+        }
+
+        /* Styling for the contact form fields */
+        .contact-form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form input[type="tel"],
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+        }
+
+        .contact-form button[type="submit"] {
+            background-color: #003f87;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button[type="submit"]:hover {
+            background-color: #002b5b;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img class="image" src="https://s3-eu-central-1.amazonaws.com/lycamobilespain-website/lycamobile-es-cms/wp-content/uploads/2017/05/16142305/contact-us.png" alt="Background Image">
+        <div class="scroll-down-bar">
+            <span>&darr;</span>
+        </div>
+    </div>
+
+    <!-- Contact Us Section -->
+    <div id="contact-us-section" class="contact-form-container">
+        <h1>Contact Us</h1>
+        <div class="contact-form">
+            <h3>To contact us, please use the form below</h3>
+            <form>
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" required>
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone">
+                
+                <label for="category">Category</label>
+                <select id="category" name="category">
+                    <option value="General Inquiry">General Inquiry</option>
+                    <option value="Feedback">Feedback</option>
+                    <option value="Support">Support</option>
+                    <option value="Other">Other</option>
+                </select>
+                
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <center><button type="submit">Submit</button></center>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Smooth Scroll Functionality
+        document.querySelector(".scroll-down-bar").addEventListener("click", function() {
+            const target = document.querySelector("#contact-us-section");
+            target.scrollIntoView({ behavior: "smooth" });
+        });
+    </script>
+</body><br>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .contact-info {
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .customer-service {
+            background-color: #3498db; /* Blue */
+        }
+
+        .email {
+            background-color: #27ae60; /* Green */
+        }
+
+        .alternate {
+            background-color: #e74c3c; /* Red */
+        }
+/* CSS for Circular Icons */
+.icon-circle {
+    display: inline-block;
+    width: 40px; /* Adjust the width and height as needed */
+    height: 40px;
+    border-radius: 50%;
+    background-color: #3498db; /* You can set different colors */
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    font-size: 20px; /* Adjust the font size as needed */
+    margin-right: 10px; /* Add some spacing between the icon and text */
+}
+
+    </style>
+</head>
+<body><center>
+    <div class="contact-info customer-service">
+    <div class="icon-circle"><i class="fas fa-phone"></i></div>
+    <p>Customer Service Number: <a href="tel:+9123456789">+91 12345 6789</a></p>
+</div>
+<div class="contact-info email">
+    <div class="icon-circle"><i class="fas fa-envelope"></i></div>
+    <p>Email: <a href="mailto:info@hyderabadmetro.com">info@hyderabadmetro.com</a></p>
+</div>
+<div class="contact-info alternate">
+    <div class="icon-circle"><i class="fas fa-phone-alt"></i></div>
+    <p>Alternate Contact: <a href="tel:+91987654321">+91 98765 4321</a></p>
+</div>
+
+</body>
+</html>

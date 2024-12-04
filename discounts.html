@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="railwaysApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="app.js"></script>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#slider-container {
+    width: 70%;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.slider {
+    float: left;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+}
+
+.offers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.offer {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+}
+
+.discount {
+    color: green;
+    font-weight: bold;
+}
+
+</style>
+</head>
+
+<body ng-controller="railwaysCtrl">
+
+    <h1>Indian Railways Offers and Discounts</h1>
+
+    <div id="slider-container">
+        <div class="slider" ng-repeat="image in images">
+            <img ng-src="{{image}}" alt="Offer Image">
+        </div>
+    </div>
+
+    <div class="offers">
+        <div class="offer" ng-repeat="offer in offers">
+            <h2>{{offer.title}}</h2>
+            <p>{{offer.description}}</p>
+            <p class="discount">Discount: {{offer.discount}}%</p>
+        </div>
+    </div>
+<script>
+var railwaysApp = angular.module('railwaysApp', []);
+
+railwaysApp.controller('railwaysCtrl', function ($scope) {
+    $scope.images = [
+        'https://images.railyatri.in/ry_images_prod/640X320-N-train-4-1554211411.png'
+    ];
+
+    $scope.offers = [
+        {
+            title: 'Weekend Special',
+            description: 'Enjoy discounted fares on weekend travel. Book now!',
+            discount: 15
+        },
+        {
+            title: 'Group Booking Discount',
+            description: 'Book tickets for a group and get a special discount. Limited time offer!',
+            discount: 20
+        },
+        {
+            title: 'Senior Citizen Discount',
+            description: 'Senior citizens enjoy exclusive discounts on ticket bookings.',
+            discount: 25
+        },
+        {
+            title: 'Ladies Category Discount',
+            description: 'Ladies enjoy exclusive discounts on ticket bookings.',
+            discount: 10
+        },
+        {
+            title: 'Disability Discount',
+            description: 'Disablity citizens enjoy supportive discounts on ticket bookings.',
+            discount: 50
+        }
+    ];
+});
+
+</script>
+</body>
+
+</html>

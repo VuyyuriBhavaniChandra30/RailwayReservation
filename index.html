@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Background Video</title>
+	<style>
+		body,
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+		}
+
+		.x h1 {
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+			animation: fadeInUp 2s ease-in-out forwards;
+            text-align:center;
+            margin-right:25%;
+		}
+
+		.video-container {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+
+			background-color: transparent;
+		}
+		.logo {
+			width: 100px;
+			height: 100px;
+			margin-top: 3%;
+			left: 0;
+			transition: 2s;
+
+		}
+
+		#background-video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+
+		}
+
+		.video-container::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+
+
+		.x {
+			position: absolute;
+			width: 1330px;
+			height: 640px;
+			background-color: rgba(23, 18, 18, 0.5);
+			bottom: 10px;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			font-weight: 500;
+
+			font-size: 60px;
+			color: rgb(230, 230, 230);
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+			padding-top: 180px;
+			padding-left: 300px;
+
+
+			opacity: 0.3;
+		}
+
+		.lines {
+			margin-top: 2px;
+			margin-left: 2px;
+			right: 10px;
+			padding-left: 50px;
+		}
+
+		@keyframes fadeInUp {
+			0% {
+				transform: translateY(20px);
+				opacity: 0;
+			}
+
+			100% {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+
+		@media (max-width: 768px) {
+			.x h1 {
+				font-size: 40px;
+				padding-top: 120px;
+			}
+		}
+
+
+
+		.d {
+			margin-right: 100px;
+			color: black;
+		}
+
+		.logo {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			pointer-events: none;
+			/* Allows clicks to reach the video controls */
+		}
+		.logo img {
+			margin-bottom: 690px;
+			margin-right: 1280px;
+			height: 130px;
+			width: 130px;
+			opacity: 1;
+			/* Adjust the overlay image opacity as needed */
+		}
+
+		.button {
+			background-color: transparent;
+			border: 2px solid white;
+			opacity: 0.7;
+			float: right;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+			display: block;
+			font-size: 16px;
+			margin: 18px 2px;
+			cursor: pointer;
+			position: relative;
+			top: 8px;
+			margin-right: 30px;
+			right: 0px;
+
+		}
+
+		.button:hover {
+			background-color: white;
+			color: black;
+			opacity: 0.7;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="video-container">
+		<video autoplay muted loop id="background-video">
+			<source src="train.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+		</video>
+	</div>
+	<div class="logo">
+		<img src="logo" alt="logo">
+	</div>
+
+
+	<div class="x">
+
+
+		<h1>INDIAN<br>RAILWAYS</h1>
+	</div>
+
+	<a href="#" class="button">ADMIN</a>
+	<a href="uregistration.php" class="button">USER</a>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Gallery</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-image: url('https://www.railway-technology.com/wp-content/uploads/sites/13/2018/06/indianrailways.jpg');
+            background-size: 100% 100%;
+        }
+        header {
+            background-color: #0e0e0fbb;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr); /* Display 1 item per row */
+            grid-gap: 20px;
+            padding: 20px;
+        }
+        .gallery-item {
+            display: flex; /* Use flexbox to arrange image and text side by side */
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            cursor: pointer;
+            max-height: 300px;
+            margin-left: 180px;
+            margin-right: 180px;
+        }
+        .gallery-item img {
+            max-width: 50%; /* Adjust image width */
+            max-height: 100%;
+            display: block;
+        }
+        .gallery-caption {
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            flex: 1; /* Make the text take the remaining space */
+            padding: 10px;
+            text-align: center;
+            transition: background 0.3s;
+            font-size: 1.2em;
+        }
+        .left-caption {
+            bottom: 0;
+            left: 0;
+        }
+        .right-caption {
+            bottom: 0;
+            right: 0;
+        }
+        .gallery-item:nth-child(odd) .gallery-caption {
+            left: 0;
+            right: auto;
+        }
+        .gallery-item:nth-child(even) .gallery-caption {
+            right: 0;
+            left: auto;
+        }
+        .gallery-item:hover .gallery-caption {
+            background: rgba(244, 233, 233, 0.744);
+            color: black;
+            max-width: 100%; /* Increase the image size on hover */
+            transition: max-width 0.3s;
+        }
+        .gallery-item:hover {
+            background: rgba(244, 233, 233, 0.744);
+            color: black;
+            max-width: 100%; /* Increase the image size on hover */
+            transform: scale(1.05);
+        }
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.897);
+            z-index: 1;
+            text-align: center;
+            color: black;
+        }
+        .image-modal img {
+            max-height: 80%;
+            max-width: 80%;
+            margin-top: 10%;
+        }
+        .close-button {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    
+        
+        .content {
+            color: #ddd;
+            background-color: rgba(0, 0, 0, 0.537);
+            margin-left: 180px;
+            margin-right: 180px;
+            border-radius: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .history-image-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        .history-image {
+            max-width: 50%;
+        }
+        .button-container {
+            margin-left: 250px;
+        }
+        
+        .b1 {
+            font-size: 24px;
+            margin-left: 130px;
+            width: 300px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.609);
+            color: #ddd;
+            gap: 0px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        
+        .b1.clicked,
+        .b1:hover {
+            background: rgba(244, 233, 233, 0.744);
+            color: black;
+            max-width: 100%; /* Increase the image size on hover */
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the IRCTC Gallery</h1>
+    </header>
+    <br><br>
+    <div class="button-container">
+        <button class="b1" onclick="button1Click()">Railways</button>
+        <button class="b1" onclick="redirectToPage2()">Trains at a Glance</button>
+    </div>
+    <br>
+
+    <div class="content">
+        <div class="history-image-container">
+            <div>
+                <h2>History</h2>
+                <p>
+                    The Trains At A Glance – time table of Indian Railways has been one of the most sought after publications in the country with a high readership. The time table, besides giving detailed information about routes and timings of important passenger trains including premium trains also encompasses a number of other information about rail travel such as reservation procedures, rules and regulation of traveling, passenger amenities on trains and in stations including catering, menu types and rates, and rail-based tourism.
+                </p>
+                <p>
+                    IRCTC has been printing and publishing Trains At A Glance for Indian Railways since 2018 with the 41st, 42nd and 43rd edition launched in 2018, 2019 and 2022 respectively. Besides, making the prestigious time table available at Railway stations premises and reservation offices, IRCTC in a first also made the Trains At A Glance available at the doorsteps of the customers by offering online booking facility through its ticketing and tourism websites.
+                </p>
+                <p>
+                    Ministry of Railways is releasing the 44th edition of Trains At A Glance for the customers which will be dedicated to the service of the nation in October, 2023.
+                </p>
+                <h2>TAG Description</h2>
+                <p>
+                    IRCTC is proud to be associated with Railways for bringing the new edition of Trains At A Glance – 2023 with a host of features for a better reading experience. IRCTC is the sole distributor of Trains at a Glance.
+                </p>
+            </div>
+            <img class="history-image" src="https://www.irctctourism.com/gallery/assets/images/IRCTC_Time-table-Tag-2023.jpg" alt="History Image">
+        </div>
+        <h2>Salient Features</h2>
+    <ul>
+        <li>Complete information of schedules of more than 1400 trains.</li>
+        <li>A Comparative Fare chart for each class of train per kilometre.</li>
+        <li>Information about reservation and cancellation of tickets.</li>
+        <li>Information about various passenger amenities and facilities on trains and at stations.</li>
+        <li>Information about rules and regulation of train travel.</li>
+        <li>Information about rail-based tourism in the country covering hill railways, luxury tourist trains, tourist train tour packages.</li>
+    </ul>
+    
+    </div>
+    <br><br><br><br><br>
+    <script>
+        function button1Click() {
+            const newUrl = 'gallerypage.html';
+            window.location.href = newUrl;
+        }
+
+        function redirectToPage2() {
+            const newUrl = 'trainsataglance.html';
+            window.location.href = newUrl;
+        }
+        
+        const buttons = document.querySelectorAll('.b1');
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove "clicked" class from all buttons
+                buttons.forEach(b => b.classList.remove('clicked'));
+                // Add "clicked" class to the clicked button
+                button.classList.add('clicked');
+            });
+        });
+    </script>
+</body>
+</html>

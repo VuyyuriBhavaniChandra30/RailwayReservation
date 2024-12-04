@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #a1{
+    
+        font-family: Arial, Helvetica, sans-serif;
+       font-size: xx-large;
+       padding-top: 200px;
+      margin-right: 500px;
+       
+    }
+    .a3{
+   
+       font-family: Arial, Helvetica, sans-serif;
+       font-size: xx-large;
+       
+       padding-top: 80px;
+       
+    }
+.accordion {
+  background-color: #eee;
+  color: #0b0b0b;
+  cursor: pointer;
+  padding: 18px;
+  margin-left: 20px;
+  width: 800px;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #4091d9;
+}
+
+.accordion:after {
+  content: '\002B';
+  
+  color: #777;
+  font-weight: bold;
+  float: right;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 5px;
+  
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  margin-left: 100px;
+  width: 800px;
+  padding-right: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  transition: max-height 0.2s ease-out;
+}
+.container {
+        display: flex;
+    }
+    .image-container {
+        flex: 1;
+        padding: 20px;
+    }
+    .image-container img {
+        max-width: 100%;
+        height: auto;
+    }
+    .accordion-container {
+        flex: 2;
+        padding: 20px;
+    }
+        .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.content {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.image {
+  flex: 1;
+  text-align: right;
+}
+;
+    
+
+
+        
+    </style>
+
+    <!-- Include AngularJS library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        // Define AngularJS module
+        var app = angular.module('myApp', []);
+
+        // AngularJS controller to handle button click
+        app.controller('myCtrl', function ($scope) {
+            $scope.scrollToBottom = function () {
+                var scrollTarget = document.documentElement.scrollHeight - window.innerHeight;
+                window.scrollTo({
+                    top: scrollTarget,
+                    behavior: 'smooth'
+                });
+            };
+        });
+    </script>
+</head>
+<body ng-controller="myCtrl">
+    <img src="https://4.bp.blogspot.com/-kHjtF0rZ61k/Ts-4iQyeJwI/AAAAAAAAAcM/ODw1u5geuJA/s1600/DSC_0005.JPG" width="1440px" height="900px">
+
+    <div class="container">
+         <div class="content">
+          <p>
+   
+    
+    
+<center>
+<h1 class="a3">Let Us Help You - FAQs</h1>
+<br><br>
+</center>
+<button class="accordion">PROJECTS</button>
+<div class="panel">
+<h3>1.How are the construction costs of various projects calculated in Indian Railways?</h3>
+  <p>Construction costs of projects in Indian Railways are calculated by assessing factors such as project requirements, infrastructure costs, materials costs, labor costs, and contingency factors.</p>
+
+  <h3>2.What are the common challenges faced by Indian Railways in executing its projects? </h3>
+  <p>Some common challenges faced by Indian Railways in executing its projects include poor financial management, inadequate technical expertise, inefficient project execution, land acquisition issues, corruption, and political interference.</p>
+  <h3>3. What are the latest projects of Indian Railways and their progress?</h3>
+  <p> Indian Railways has been involved in various projects, such as doubling of tracks, electrification of tracks, increasing the frequency of trains, improving infrastructure at railway stations, and developing a modern and advanced railway system.</p>
+  <h3>4. What are the benefits of these projects for the country and its people?</h3>
+  <p>The completion of these projects is expected to bring significant benefits to the country and its people. Some of these benefits include increased railway capacity, improved transportation services, reduced traffic congestion, enhanced connectivity between different regions of the country, and faster economic growth.</p>
+    
+</div>
+
+
+
+
+
+
+
+<button class="accordion">FARE</button>
+<div class="panel">
+<h3>5. How much will it cost me to travel?</h3>
+<p>There is no exact way to calculate the cost of a train journey in India. However, there are some factors you can consider when estimating your travel expenses:
+Train class: Different train classes in India have varying prices. For example, the AC 3-tier coaches are more expensive than the unreserved (general) coaches.<br>
+
+Train fare: Train fares depend on factors like the distance, the type of train, and the date of travel.<br>
+
+Booking platform fees: When booking a train ticket, there are platform fees associated with using online booking services like IRCTC, the Indian Railways website, or mobile applications.<br>
+
+Number of passengers: If you are traveling with a group, you will need to consider the number of passengers and the additional cost for each passenger.<br>
+
+Seasonal differences: Travel costs may vary depending on the time of year, with peak season ticket prices being higher</p>
+<h3>6. Can I purchase a monthly pass to travel?</h3>
+<p>These passes come in three types:
+
+"Passenger Seat Reservation Pass" (P-SR): This pass is valid for a calendar month and entitles you to get reservation up to 6 months in advance. The fare varies depending on the age of the passenger. For example, for an adult (age above 12 and below 58 years), the fare is INR 360.<br>
+
+"Seat Reservation Pass with 50% cash discount" (S-R with 50% Cash): This pass also has a validity of a calendar month. It offers the same entitlement as the P-SR pass. The fare varies depending on the age of the passenger. For example, for an adult, the fare is INR 240.<br>
+
+"Passenger Reservation Pass without cash discount" (P-R): This pass is valid for a calendar month and entitles you to get reservation up to 6 months in advance. The fare is the same for all age groups. For example, for an adult, the fare is INR 360.</p>  
+<h3>7.How can I find the latest fare information in Indian Railways?</h3>
+<p>The Indian Railways website (www.indianrail.gov.in) provides the latest fare information. You can also visit the official IRCTC app on your smartphone or visit a nearby railway station for assistance.</p>
+</div>
+
+
+
+<button class="accordion">SMART CARD</button>
+<div class="panel">
+    <h3>8. What is a Smart Card?</h3>
+    <p>It is a card ideal for regular commuters which can be used as:
+
+        <br>Store Value Pass (SVP)
+        <br>Trip Pass (TP) </p>
+    <h3>9.What are the benefits of smart card?</h3>
+    <p>Enhances the overall security of train travel in India.<br>
+Speeds up the ticketing process by eliminating the need for physical tickets.<br>
+Ensures proper accountability of passengers' bookings.<br>
+Facilitates refunds, cancellations, and modifications in bookings.</p>
+    </div>
+
+  <button class="accordion">PAPER TICKET-QR CODE</button>
+<div class="panel">
+    <H3>10.What is a Paper Ticket?</H3>
+    <p>A paper ticket is a valid ticket with QR code printed on it issued for journey in metro.</p>
+    <h3> 11.What is the validity of the ticket?</h3>
+    <p>It is valid for travel till the last train for the day.</p>
+    <h3>12.  How can the Paper Ticket QR Code help in booking trains in Indian Railways?</h3>
+    <p>The QR code on your paper ticket can be scanned at any authorized platform in the train station, including booking counters, self-service kiosks, or the ticket-checking counters at the time of boarding the train.
+By scanning the QR code, the staff at the train station can confirm the validity of your ticket, which eliminates the need for a physical ticket or any other document during the boarding process.</p>
+  </div>
+
+
+  <button class="accordion">TRAVEL & TRAIN</button>
+<div class="panel">
+    <h3>13. Can I travel with a global ticket on Indian Railways?</h3>
+    <p> Yes, you can travel with a global ticket on Indian Railways. The global ticket is valid for unreserved accommodation in all classes of travel in India for the next 3 months from the date of purchase.</p>
+    <h3>14. Can I cancel or change my reservation online after booking my ticket through Indian Railways' website?</h3>
+    <p>Yes, you can cancel or change your reservation online. You need to have a valid transaction ID (TID) and a registered email ID.</p>
+    <h3>15. How do I get a refund for my train ticket if my train is delayed or cancelled?</h3>
+    <p>In case of train delay or cancellation, you need to follow the refund process as mentioned in the Indian Railways' Refund Policy. This may involve submitting the ticket along with the relevant documents and fulfilling the other conditions mentioned in the policy.</p>
+  </div>
+
+
+
+
+  <button class="accordion">STATION</button>
+<div class="panel">
+    <h3>16. What are the facilities provided to commuters at stations?</h3>
+    <p>For the convenience of commuters each station has multiple access through staircase, escalators and lifts. Additionally, commuters can avail facilities like first aid boxes, wheelchairs etc on demand. These can be availed by contacting us at Customer Care Counters. Retail, Food & Beverage outlets and ATM Facilities are also available for commuters.</p>
+    <h3>17. What should I do if my train ticket is damaged or lost while travelling?</h3>
+    <p>In case of a damaged or lost ticket, you need to immediately inform the railway authorities. You will be provided with a replacement ticket for your journey.</p>
+    <h3>18.Can I board a train if I've booked a seat but not the ticket?</h3>
+    <p>No, you will not be allowed to board a train without having the physical ticket in your possession.</p>
+</div>
+
+
+
+  <button class="accordion">SECURITY , SAFETY & EMERGENCEY</button>
+<div class="panel">
+    <h3> 19. What steps have been taken to ensure safety & security?</h3>
+    <p>CCTV is provided for continuous surveillance and monitoring both in train and on platforms. A Video Transmission System (VTS) is provided in the train, so that central control can monitor whatever is happening inside the compartment in a running train. This is a new system that is being provided for the first time in India. Additionally, a thorough Security check is undertaken with - baggage scanning machines, Door Frame Metal Detectors (DFMD) and Hand Held Metal Detectors (HHMD).</p>
+    <h3>20.  What happens when platforms get over crowded?</h3>
+    
+<p>Sufficient staff is deployed at station to avoid any such situation. The stations have adequate holding area to avoid crowding at platform level. Also, the Station Controller monitors the platform on CCTVs and if there is overcrowding at platform, the entry to platform will be stopped for some time.</p>
+<h3>21.  What happens if the train stops between stations?</h3>  
+<p>Do not panic, in case of any such eventuality our control center would advise accordingly through in-train announcement. Adequate safety measures are in place to safely evacuate passengers in case of any unforeseen event.</p>
+</div>
+
+  <button class="accordion">OTHERS</button>
+  <div class="panel">
+    <h3>22. Can I purchase a platform ticket?</h3>
+    <p>You can purchase ticket equal to minimum fare to visit paid area of the same station. However, you have to exit within 20 minutes from the same station to avoid penalty.</p>
+</div>
+<br><br><br><br>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+</p>
+</div>
+
+<div class="image">
+  <img id="a1"src="https://images.livemint.com/rf/Image-621x414/LiveMint/Period2/2016/11/11/Photos/Processed/raill-kGbE--621x414@LiveMint.jpg" width="490px" height="300px">
+</div>
+</body>
+</html>

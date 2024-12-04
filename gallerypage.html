@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Gallery</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-image: url('https://www.railway-technology.com/wp-content/uploads/sites/13/2018/06/indianrailways.jpg');
+            background-size: 100% 100%;
+           
+            opacity: 0.5px;
+        }
+        header {
+            background-color: #0e0e0fbb;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr); /* Display 1 item per row */
+            grid-gap: 20px;
+            padding: 20px;
+        }
+        .gallery-item {
+            display: flex; /* Use flexbox to arrange image and text side by side */
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            cursor: pointer;
+            max-height: 300px;
+            margin-left: 180px;
+            margin-right: 180px;
+        }
+        .gallery-item img {
+            max-width: 50%; /* Adjust image width */
+            max-height: 100%;
+            display: block;
+        }
+        .gallery-caption {
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            flex: 1; /* Make the text take the remaining space */
+            padding: 10px;
+            text-align: center;
+            transition: background 0.3s;
+            font-size: 1.2em;
+        }
+        .left-caption {
+            bottom: 0;
+            left: 0;
+        }
+        .right-caption {
+            bottom: 0;
+            right: 0;
+        }
+        .gallery-item:nth-child(odd) .gallery-caption {
+            left: 0;
+            right: auto;
+        }
+        .gallery-item:nth-child(even) .gallery-caption {
+            right: 0;
+            left: auto;
+        }
+        .gallery-item:hover .gallery-caption {
+            background: rgba(244, 233, 233, 0.744);
+            color: black;
+            max-width: 100%; /* Increase the image size on hover */
+            transition: max-width 0.3s;
+            
+        }
+        .gallery-item:hover {
+            background: rgba(244, 233, 233, 0.744);
+            color: black;
+            max-width: 100%; /* Increase the image size on hover */
+            transform: scale(1.05);
+            
+        }
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.897);
+            z-index: 1;
+            text-align: center;
+            TEXT color: BLACK;
+        }
+        .image-modal img {
+            max-height: 80%;
+            max-width: 80%;
+            margin-top: 10%;
+        }
+        .close-button {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .button-container {
+            margin-left: 250px;
+        }
+        
+        .b1 {
+            font-size: 24px;
+            margin-left: 130px;
+            width: 300px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.609);
+            color: #ddd;
+            gap: 0px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        
+        .b1.clicked,
+        .b1:hover {
+            background: rgba(244, 233, 233, 0.744);
+            color: black;
+            max-width: 100%; /* Increase the image size on hover */
+            transform: scale(1.05);
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the IRCTC Gallery</h1>
+    </header>
+    <br><br>
+    <div class="button-container">
+        <button class="b1" onclick="button1Click()">Railways</button>
+        
+        <button class="b1" onclick="redirectToPage2()">Trains at a Glance</button>
+    </div>
+    
+    <br>
+    <script>
+        // Function for Button 1 click action
+        function button1Click() {
+            // Add your action here for Button 1
+            const newUrl = 'gallerypage.html';
+            window.location.href = newUrl;
+        }
+
+        
+        function redirectToPage2() {
+            // Specify the URL of the page you want to redirect to
+            const newUrl = 'trainsataglance.html';
+            
+            // Redirect to the specified page
+            window.location.href = newUrl;
+        }
+    </script>
+    
+
+    <div class="gallery">
+    <div class="gallery-item">
+        <img src="https://i.pinimg.com/564x/a2/c4/49/a2c449f2911097f5102846a0af38231a.jpg" alt="Railway Image 1">
+        
+        <div class="gallery-caption left-caption">
+            <h2>Sunset Rails</h2>
+            <p>Beautiful sunset scene along the railway tracks.<br>"Sunset Rails" depicts the peaceful charm of railway tracks against a beautiful sunset backdrop, creating a calming and picturesque scene. It's a serene moment in the world of trains.</p>
+        </div>
+    </div>
+    <br>
+    <div class="gallery-item">
+        <div class="gallery-caption left-caption">
+            <h2>Mountain Rails</h2>
+            <p>A misty journey through the mountains by train.<br>"Mountain Rails" capture the thrill of trains traversing through stunning mountains, giving passengers awe-inspiring views of nature's grandeur. These tracks blend adventure and natural beauty, making train journeys memorable.</p>
+        </div>
+        <img src="https://img.traveltriangle.com/blog/wp-content/uploads/2017/10/rsz_mountain_railways_of_india_kb6592_cover_image.jpg" alt="Railway Image 2">
+    </div>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3JpJTIwbGFua2ElMjB0cmFpbnxlbnwwfHwwfHx8MA%3D%3D"  alt="Railway Image 1">
+            
+            <div class="gallery-caption left-caption">
+                <h2>Jungle Adventure</h2>
+                <p>
+                    "Into the Wild: Embarking on an Unforgettable Jungle Rail Adventure."<br>Jungle adventure by rail immerses travelers in the heart of the wilderness, where the rhythmic clatter of the train is the soundtrack to encounters with exotic flora and fauna.</p>
+            </div>
+        </div>
+        <br>
+        <div class="gallery-item">
+            <div class="gallery-caption left-caption">
+                <h2>Coastal Rails</h2>
+                <p>"Coastal Rails: Where the Ocean Meets the Tracks"<br>Experience the mesmerizing coastal rails, where the rhythmic clatter of wheels mingles with the soothing sounds of crashing waves. These journeys offer a front-row seat to the beauty of the ocean and the serenity of the shoreline</p>
+            </div>
+            <img src="https://assets.vogue.com/photos/6374ed65005fac8233a95851/16:9/w_1280,c_limit/CoastStarlight_Cali_Mountains_Oct2015_FullRights5Years2020.jpg" alt="Railway Image 2">
+        </div>
+    <br>
+    <!-- Add more images with text as needed -->
+    <div class="gallery-item">
+        <img src="https://images.moneycontrol.com/static-mcnews/2020/09/1-train-route-bw-chiplun-anjani.jpg"  alt="Railway Image 1">
+        
+        <div class="gallery-caption left-caption">
+            <h2>Rural Scenic</h2>
+            <p>"Journey Through Rural Serenity: Scenic Rails Unveiling Countryside Charm"<br>The slow-paced charm of the countryside meets the unhurried pace of the train, creating a journey that feels like a step back in time, away from the hustle and bustle of city life.</p>
+        </div>
+    </div>
+
+
+    <br>
+        <div class="gallery-item">
+            <div class="gallery-caption left-caption">
+                <h2>Misty Rails</h2>
+                <p>"Enveloped in Mist: The Mystique of Misty Rails""<br>The world outside the window becomes a dreamlike painting, where every curve of the track reveals a new story in the fog, making these journeys a captivating adventure for the soul</p>
+            </div>
+            <img src="https://images.moneycontrol.com/static-mcnews/2017/12/fog.jpg?impolicy=website&width=1600&height=900" alt="Railway Image 2">
+        </div>
+    <br>
+    
+</div>
+
+
+    
+    <div class="image-modal" id="imageModal">
+        <span class="close-button" onclick="closeImageModal()">&times;</span>
+        <img id="modalImage" src="" alt="Expanded Image">
+    </div>
+
+    <script>
+        const galleryItems = document.querySelectorAll(".gallery-item");
+        const imageModal = document.getElementById("imageModal");
+        const modalImage = document.getElementById("modalImage");
+    
+        galleryItems.forEach((item, index) => {
+            item.addEventListener("click", () => redirectToPage(index));
+        });
+    
+        function redirectToPage(index) {
+            const pages = ['gp1.html', 'gp2.html','gp3.html','gp4.html','gp5.html','gp6.html'];
+    
+            
+            const newUrl = pages[index];
+    
+          
+            window.location.href = newUrl;
+        }
+        const buttons = document.querySelectorAll('.b1');
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove "clicked" class from all buttons
+                buttons.forEach(b => b.classList.remove('clicked'));
+                // Add "clicked" class to the clicked button
+                button.classList.add('clicked');
+            });
+        });
+    
+      
+    </script>
+    
+</body>
+</html>

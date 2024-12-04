@@ -1,0 +1,248 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <title>Document</title>
+        <style>
+            body{
+                background-color: rgb(222, 234, 245);
+            }
+            #home {
+                display: flex;
+                align-items: top;
+                gap:0px;
+                margin: 2%;
+                margin-bottom: 3%;
+            }
+            form{
+                margin:1%;
+                border:2px solid black;
+                border-radius:5px;
+                width:85%;
+                margin-left:10%;
+                margin-right:10%;
+                background-color: white;
+                height:570px;
+            }
+            img {
+                width:75%;
+                margin-left:10%;
+                border-radius:5px;
+                margin-top:0;
+            }
+            #notifications {
+                width: 75%;
+                height:180px;
+                margin-left:10%;
+                border-radius:5px;
+                margin-top:1%;
+                border: 2px solid black;
+                background-color: white;
+                color:red;
+                font-size:18px;
+            }
+            label{
+                padding:1%;
+                font-weight:bold;
+                font-size:20px;
+                margin:2%;
+                margin-bottom:5%;
+            }
+            input,select{
+                font-size:18px;
+                padding:2.5%;
+                width:90%;
+                margin:3%;
+                margin-bottom:5%;
+                margin-top:5%;
+            }
+            input[type='submit']{
+                background-color: rgb(102, 175, 43);
+                width:40%;
+                color:white;
+                font-weight:bold;
+                margin:2%;
+            }
+            input[type='submit']:hover{
+                background-color:orange;
+            }
+            select{
+                width:90%;
+                border-radius:2px;
+            }
+            #from,#to{
+                display: inline-block;
+                margin-left:3%;
+                width:45%;
+                margin-top:5%;
+                margin-bottom:2%;
+            }
+            #class2,#dot{
+                display: inline-block;
+                margin-left:3%;
+                width:45%;
+                margin-bottom:2%;
+            }
+            #heading{
+                background-color:rgb(64, 64, 170);
+                padding:1%;
+                color:white;
+                font-size:20px;
+            }
+            #type{
+                display: inline-block;
+                margin-left:3%;
+                width:45%;
+                margin-bottom:2%;
+            }
+            #left{
+                display:flex;
+                flex-direction:column;
+                margin-bottom:1%;
+                margin-top:0.5%;
+            }
+
+.notifications {
+  list-style: none;
+  padding: 0;
+}
+
+.notification {
+  margin-bottom: 10px;
+}
+
+.notification-type {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.notification-message {
+  color:red;
+}
+
+        </style>
+        <script>
+            function includeHTML() {
+                var z, i, elmnt, file, xhttp;
+                /*loop through a collection of all HTML elements:*/
+                z = document.getElementsByTagName("*");
+                for (i = 0; i < z.length; i++) {
+                    elmnt = z[i];
+                    /*search for elements with a certain attribute:*/
+                    file = elmnt.getAttribute("w3-include-html");
+                    if (file) {
+                    /*make an HTTP request using the attribute value as the file name:*/
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4) {
+                        if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                        if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                        /*remove the attribute, and call this function once more:*/
+                        elmnt.removeAttribute("w3-include-html");
+                        includeHTML();
+                        }
+                    }      
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /*exit the function:*/
+                    return;
+                    }
+                }
+            };
+        </script>
+    </head>
+    <body>
+        <div w3-include-html="main.html"> 
+        <script>
+            includeHTML();
+        </script>
+        </div>
+        <div id="home">
+            <div id="f">
+                <form action="plantrip.php" method="POST">
+                    <div id="heading"><center><h2>GET TRAIN INFO</h2></center></div><br>
+                    <div id="from">
+                        <label for="from">FROM</label><br>
+                        <input type="text" name="from">
+                    </div>
+                    <div id="to">
+                        <label for="to">TO</label><br>
+                        <input type="text" name="to">
+                    </div>
+                    <div id="dot">
+                        <label for="date">DD/MM/YYYY</label><br>
+                        <input type="date" name="date" id="date"><br>
+                    </div>
+                    
+                    <script type="text/javascript">
+                        $(function(){
+                            var dtToday = new Date();
+                         
+                            var month = (dtToday.getMonth() + 1).toString().padStart(2, '0');
+                            var day = dtToday.getDate().toString().padStart(2, '0');
+                            var year = dtToday.getFullYear();
+                            var maxDate = year + '-' + month + '-' + day;
+                            $('#date').attr('min', maxDate);
+                        });
+                    </script>
+                    
+                    <div id="class2">
+                        <label for="Class">CLASS</label><br>
+                        <select name="class">
+                            <option value="ALL">ALL CLASSESS </option>
+                            <option value="EA">ANUBHUTI CLASS (EA)</option>
+                            <option value="1A">AC FIRST CLASS (1A)</option>
+                            <option value="EV">VISTADOME AC (EV)</option>
+                            <option value="EC">EXEC. CHAIR CAR (EC)</option>
+                            <option value="2A">AC 2 TIER (2A)</option>
+                            <option value="FC">FIRST CLASS (FC)</option>
+                            <option value="3A">AC 3 TIER (3A)</option>
+                            <option value="3E">AC 3 ECONOMY (3E)</option>
+                            <option value="VC">VISTADOME CHAIR CAR (VC)</option>
+                            <option value="CC">AC CHAIR CAR (CC)</option>
+                            <option value="SL">SLEEPER (SL)</option>
+                            <option value="VS">VISTADOME NON AC (VS)</option>
+                            <option value="2S">SECOND SITTING (2S)</option>
+                        </select><br>
+                    </div>
+                    <div id="type">
+                        <label for="type">TYPE</label><br>
+                        <select name="type">
+                            <option value="GENERAL">GENERAL</option>
+                            <option value="LADIES">LADIES</option>
+                            <option value="LOWER BERTH/SR.CITIZEN">LOWER BERTH/SR.CITIZEN</option>
+                            <option value="PERSON WITH DISABILITY">PERSON WITH DISABILITY</option>
+                            <option value="DUTY PASS">DUTY PASS</option>
+                            <option value="TATKAL">TATKAL</option>
+                            <option value="PREMIUM TATKAL">PREMIUM TATKAL</option>
+                        </select><br>
+                    </div>
+                    <div id="submit">
+                        <center><input type="submit" name="GET_TRAINS" value="GET TRAINS"></center>
+                    </div>
+                </form>
+            </div>
+            <div id="left">
+                <img src="homeimage.jpg">
+                <div id="notifications">
+                    <ul class="notifications">
+                      <li class="notification">
+                        <span class="notification-message">*Train A001 from New Delhi to Mumbai has been delayed by 2 hours.</span>
+                      </li>
+                      <li class="notification">
+                        <span class="notification-message">*Train B002 from Mumbai to Chennai has been canceled due to a technical issue.</span>
+                      </li>
+                      <li class="notification">
+                        <span class="notification-message">*Train C003 from Chennai to Bangalore has additional seat availability.</span>
+                      </li>
+                      <li class="notification">
+                        <span class="notification-message">*Train D004 from Bangalore to Hyderabad has a confirmed booking.</span>
+                      </li>
+                    </ul>
+                </div>                                                  
+            </div>
+        </div>
+    </body>
+</html>
